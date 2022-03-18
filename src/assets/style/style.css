@@ -1,0 +1,27 @@
+.App-header {
+    display: flex;
+}
+
+.hidden {
+    display: none;
+}
+
+.selected {
+    background-color: #FFFFD4;
+    width: 182px;
+    height: 80px;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+}
+
+.question-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.question-option img{
+    width: 20px;
+    height: 20px;
+}
+
