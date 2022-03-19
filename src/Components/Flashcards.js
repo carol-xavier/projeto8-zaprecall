@@ -10,6 +10,9 @@ function Flashcards(props) {
 
     const [selected, setSelected] = useState(false);
 
+    const [showAnswer, setShowAnswer] = useState(false);
+    const classe = showAnswer ? 'hidden' : '';
+    const difClasse = showAnswer ? '' : 'hidden';
 
     return !selected ? (
         <div className='question-option' onClick={() => setSelected(true)}>
@@ -18,10 +21,21 @@ function Flashcards(props) {
         </div>
 
     ) : (
-        <div className='question-option selected'>
-            <p>{question.question}</p>
-            <img src={Arrow} />
-        </div>
+        <div className='selected'>
+            <div className= {classe}>
+                <p>{question.question}</p>
+                <img src={Arrow} onClick={() => setShowAnswer(!showAnswer)}/>
+            </div>
+
+            <div className={difClasse}>
+                <p>{question.answer}</p>
+                <div className='game-options'>
+                    <p>Não lembrei</p>
+                    <p>Quase não lembrei</p>
+                    <p>Zap!</p>
+                </div>
+            </div>
+        </div >
     )
 }
 

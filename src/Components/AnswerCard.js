@@ -8,14 +8,10 @@ function AnswerCard(props) {
     const [selected, setSelected] = useState(true);
 
     return !selected ? (
-        <section className='card-deck'>
-            <article className='question-option selected'>
-                <div>
-                    <p>pergunta</p>
-                    <img src={Arrow} onClick={() => setSelected(false)} />
-                </div>
-            </article>
-        </section>) : (
+        <div className='question-option selected'>
+            <p>pergunta</p>
+            <img src={Arrow} onClick={() => setSelected(false)} />
+        </div>) : (
         <div className='answer'>
             <p>{answer}</p>
             <div className='game-options'>
