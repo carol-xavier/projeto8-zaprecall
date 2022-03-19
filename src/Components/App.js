@@ -1,7 +1,8 @@
 import React from 'react';
-import littleLogo from '../assets/img/logo-pequeno.png';
 import '../assets/style/style.css';
-import Flashcards from './FlashcardDeck';
+
+import littleLogo from '../assets/img/logo-pequeno.png';
+import FlashcardDeck from './FlashcardDeck';
 
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
         <h1>ZapRecall</h1>
       </header>
 
-    {Flashcards()}
+    {FlashcardDeck()}
 
       <footer className='answer-counter'> 
         0/Total Concluídos
