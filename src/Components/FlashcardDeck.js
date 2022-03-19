@@ -14,9 +14,8 @@ function FlashcardDeck() {
  
   return (
       <div>
-        {questions.map(card => {
-          const {question, answer } = card;
-          return <Flashcards question={question} answer={answer} />;
+        {questions.map((question, index) => {
+          return <Flashcards question={question} index={index} key={index} />;
         })}
       </div>
   );
