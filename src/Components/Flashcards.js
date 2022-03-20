@@ -1,12 +1,13 @@
 import '../assets/style/style.css';
 import { useState } from 'react';
-import AnswerCard from './AnswerCard';
+// import AnswerCard from './AnswerCard';
 import Arrow from '../assets/img/setinha.png';
 import Play from '../assets/img/play.png';
 
 
 function Flashcards(props) {
     const { question, index } = props;
+    const { answer, callback } = props;
 
     const [selected, setSelected] = useState(false);
 
@@ -22,6 +23,8 @@ function Flashcards(props) {
         setSelected(false); 
         setShowAnswer(false);
         setResult(result);
+
+        callback([...answer, result]);
     } 
 
     return !selected ? (

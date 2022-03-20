@@ -57,11 +57,14 @@
 }
 
 .dont-result {
-    background-color: #FF3030;
+    color: #FF3030;
+    text-decoration-line: line-through;
 }
 .almost-result{
-    background-color: #FF922E;
+    color: #FF922E;
+    text-decoration-line: line-through;
 }
 .zap-result {
-    background-color: #2FBE34;
+    color: #2FBE34;
+    text-decoration-line: line-through;
 }
