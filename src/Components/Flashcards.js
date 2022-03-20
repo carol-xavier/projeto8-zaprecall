@@ -1,6 +1,6 @@
 import '../assets/style/style.css';
 import { useState } from 'react';
-// import AnswerCard from './AnswerCard';
+import Header from './Header';
 import Arrow from '../assets/img/setinha.png';
 import Play from '../assets/img/play.jpg';
 import Wrong from '../assets/img/wrong-icon.jpg';
@@ -20,21 +20,23 @@ function Flashcards(props) {
     const difClasse = showAnswer ? '' : 'hidden';
 
     const [solution, setResult] = useState(null);
-    const newClass =  solution ? `question-option ${solution}` : `question-option`;
+    const newClass = solution ? `question-option ${solution}` : `question-option`;
 
-    const[icon, setIcon] = useState(Play);
+    const [icon, setIcon] = useState(Play);
 
 
-    function getResult(event, icons, result){
+    function getResult(event, icons, result) {
         event.stopPropagation();
-        setSelected(false); 
+        setSelected(false);
         setShowAnswer(false);
         setResult(result);
 
         setIcon(icons);
         callbackAnswer([...answer, result]);
         callbackIcons([...resultIcons, icons]);
-    } 
+    }
+
+
 
     return !selected ? (
         <div className={newClass} onClick={() => setSelected(true)}>
@@ -43,9 +45,9 @@ function Flashcards(props) {
         </div>
     ) : (
         <div className='selected'>
-            <div className= {classe}>
+            <div className={classe}>
                 <p>{question.question}</p>
-                <img src={Arrow} onClick={() => setShowAnswer(!showAnswer)}/>
+                <img src={Arrow} onClick={() => setShowAnswer(!showAnswer)} />
             </div>
 
             <div className={difClasse}>
