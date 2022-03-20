@@ -2,12 +2,16 @@ import '../assets/style/style.css';
 import { useState } from 'react';
 // import AnswerCard from './AnswerCard';
 import Arrow from '../assets/img/setinha.png';
-import Play from '../assets/img/play.png';
+import Play from '../assets/img/play.jpg';
+import Wrong from '../assets/img/wrong-icon.jpg';
+import Almost from '../assets/img/almost-icon.jpg';
+import Right from '../assets/img/right-icon.png';
+
 
 
 function Flashcards(props) {
     const { question, index } = props;
-    const { answer, callback } = props;
+    const { answer, callbackAnswer, resultIcons, callbackIcons } = props;
 
     const [selected, setSelected] = useState(false);
 
@@ -18,19 +22,24 @@ function Flashcards(props) {
     const [solution, setResult] = useState(null);
     const newClass =  solution ? `question-option ${solution}` : `question-option`;
 
-    function getResult(event, result){
+    const[icon, setIcon] = useState(Play);
+
+
+    function getResult(event, icons, result){
         event.stopPropagation();
         setSelected(false); 
         setShowAnswer(false);
         setResult(result);
 
-        callback([...answer, result]);
+        setIcon(icons);
+        callbackAnswer([...answer, result]);
+        callbackIcons([...resultIcons, icons]);
     } 
 
     return !selected ? (
         <div className={newClass} onClick={() => setSelected(true)}>
             <h6>Pergunta {index + 1}</h6>
-            <img src={Play} />
+            <img src={icon} />
         </div>
     ) : (
         <div className='selected'>
@@ -42,9 +51,9 @@ function Flashcards(props) {
             <div className={difClasse}>
                 <p>{question.answer}</p>
                 <div className='answer-options'>
-                    <div className='answer-box  dont-remember' onClick={(event) => getResult(event, 'dont-result')}>Não lembrei</div>
-                    <div className='answer-box  almost-remember' onClick={(event) => getResult(event, 'almost-result')}>Quase não lembrei</div>
-                    <div className='answer-box  zap' onClick={(event) => getResult(event, 'zap-result')}>Zap!</div>
+                    <div className='answer-box  dont-remember' onClick={(event) => getResult(event, Wrong, 'dont-result')}>Não lembrei</div>
+                    <div className='answer-box  almost-remember' onClick={(event) => getResult(event, Almost, 'almost-result')}>Quase não lembrei</div>
+                    <div className='answer-box  zap' onClick={(event) => getResult(event, Right, 'zap-result')}>Zap!</div>
                 </div>
             </div>
         </div >

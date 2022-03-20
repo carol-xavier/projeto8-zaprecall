@@ -1,5 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Recursive:wght@300;400;500;600;700&family=Righteous&display=swap');
+
+.App {
+ background-color: #FB6B6B;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+
 .App-header {
+    font-family: 'Righteous';
+    color: #FFFFFF;
+    font-size: 36px;
     display: flex;
+    align-items: center;   
+}
+
+.App-header img {
+    margin-right: 5px;
+    width: 52px;
+    height: 60px;
 }
 
 .hidden {
@@ -8,15 +27,35 @@
 
 .selected {
     background-color: #FFFFD4;
-    width: 182px;
-    height: 80px;
+    width: 299px;
+    height: 131px;
+    margin-bottom: 5px;
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
     border-radius: 5px;
-    font-size: 12px;
+    
+    font-family: 'Recursive';
+    font-size: 16px;
+    font-weight: 400;   
+    position: relative; 
+}
+.selected img{
+    position: absolute;
+    bottom:5%;
+    right: 5%;
 }
 
 .question-option {
-    font-size: 12px;
+    font-family: 'Recursive';
+    font-size: 20px;
+    font-weight: 700;
+
+    width: 300px;
+    height: 65px;  
+    background: #FFFFFF;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+
+    margin-bottom: 5px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -28,22 +67,22 @@
 }
 
 .answer-options {
+    margin-top: 10%; /*NOT WORKIGN WELL*/
     display: flex;
     justify-content: space-evenly;
-    align-items: baseline; /*o baseline não está funcionando */
 }
 
 .answer-box {
-    width: 55px;
-    height: 24px;
+    width: 85.17px;
+    height: 37.17px;
     border-radius: 5px;
-    color: #ffffff;
-    font-size: 7px;
 
     display: flex;
     align-items: center;
+    text-align: center;
     justify-content: center;
 }
+
 .dont-remember{
     background-color: #FF3030;
 }
@@ -67,4 +106,27 @@
 .zap-result {
     color: #2FBE34;
     text-decoration-line: line-through;
+}
+
+
+footer {
+    box-sizing: border-box;
+    padding: 5%;
+    font-family: 'Recursive';
+    font-weight: 400;
+    font-size: 18px;
+
+    background-color: #FFFFFF;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-icons {
+    display: flexbox;
+}
+.footer-icons img{
+    width: 14px;
+    height: 14px;
 }
