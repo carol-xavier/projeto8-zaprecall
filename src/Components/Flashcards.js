@@ -1,6 +1,4 @@
-import '../assets/style/style.css';
 import { useState } from 'react';
-import Header from './Header';
 import Arrow from '../assets/img/setinha.png';
 import Play from '../assets/img/play.jpg';
 import Wrong from '../assets/img/wrong-icon.jpg';

@@ -1,6 +1,5 @@
-import {useState} from 'react';
 import '../assets/style/style.css';
-import TelaInicial from './TelaInicial';
+import FirstScreen from './FirstScreen';
 
 
 function App() {
@@ -8,7 +7,7 @@ function App() {
   return (
     <div className="App">
 
-        <TelaInicial />
+        <FirstScreen />
 
     </div>
   );

@@ -1,29 +1,26 @@
 import { useState } from 'react';
 import FlashcardDeck from './FlashcardDeck';
+import Header from './Header';
 import Logo from '../assets/img/logo.png';
-import littleLogo from '../assets/img/logo-pequeno.png';
 
-function TelaInicial() {
+function FirstScreen() {
 
     const [startGame, setStartGame] = useState(false);
 
 
     return !startGame ? (
-        <section>
+        <section className='home-page'>
             <img src={Logo} />
             <h1>ZapRecall</h1>
-            <button onClick={() => setStartGame(true)}>iniciar Recall!</button>
+            <button onClick={() => setStartGame(true)}>Iniciar Recall!</button>
 
         </section>
     ) : (
         <section className='game-body'>
-            <header className="App-header">
-                <img src={littleLogo} alt="Logo do ZapRecall" />
-                <h1>ZapRecall</h1>
-            </header>
+            <Header />
             <FlashcardDeck />
         </section>
     )
 }
 
-export default TelaInicial;
+export default FirstScreen;
