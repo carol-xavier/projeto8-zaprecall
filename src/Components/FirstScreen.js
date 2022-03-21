@@ -18,7 +18,7 @@ function FirstScreen() {
     ) : (
         <section className='game-body'>
             <Header />
-            <FlashcardDeck />
+            <FlashcardDeck startGame={startGame} callbackFirstScreen={setStartGame}/>
         </section>
     )
 }
