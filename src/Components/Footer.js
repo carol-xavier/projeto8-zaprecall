@@ -10,32 +10,31 @@ function Footer(props) {
 
   const icons = resultIcons.map((icon) => { return (<img className='footer-icons' src={icon} />); });
   const badResult = resultIcons.includes(Wrong);
-  const [finish, setFinish] = useState(false);
 
-  if(counter === total){
-    setFinish(true);
+  if (counter === total) {
+    if (badResult) {
+      return <footer className='answer-result'>
+        <img src={sadFace} />
+        <h1>Putz...</h1>
+        <p>Ainda faltam alguns...
+          Mas não desanime!</p>
+      </footer>
+    } else {
+      return <footer className='answer-result'>
+        <img src={happyFace} />
+        <h1>Parabéns!</h1>
+        <p>Você não esqueceu de nenhum flashcard!</p>
+      </footer>
+    }
   }
 
   return (
-    <footer className='answer-counter'>
-      {finish ?? (badResult === true ?
-        <div>
-          <img src={sadFace} />
-          <h1>Putz...</h1>
-          <p>Ainda faltam alguns... <br></br>
-            Mas não desanime!</p>
-        </div> :
-        <div>
-          <img src={happyFace} />
-          <h1>Parabéns!</h1>
-          <p>Você não esqueceu de nenhum flashcard!</p>
-        </div>)}
-
-      {counter}/{total} CONCLUÍDOS
-
-      <div className="footer-icons">{icons}</div>
-    </footer>
+    <footer className='answer-result'>
+      {counter} / {total} CONCLUÍDOS
+      < div className="footer-icons" > {icons}</div >
+    </footer >
   )
+
 }
 
 export default Footer;

@@ -20,7 +20,7 @@ function FlashcardDeck() {
   const [resultIcons, setResultIcons] = useState([]);
 
   return (
-      <div>
+      <div className='card-game'>
         {questions.map((card, index) => {
           return <Flashcards 
           question={card} 
