@@ -1,18 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Recursive:wght@300;400;500;600;700&family=Righteous&display=swap');
 
 .App {
- background-color: #FB6B6B;
- display: flex;
- flex-direction: column;
- align-items: center;
+    width:100vw;
+    background-color: #FB6B6B;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .App-header {
+    position: fixed;
+    top:0;
+    z-index: 2;
+    background-color: #FB6B6B;
+    width: 100vw;
+
     font-family: 'Righteous';
     color: #FFFFFF;
     font-size: 36px;
     display: flex;
     align-items: center;   
+    justify-content: center;
 }
 
 .App-header img {
@@ -63,7 +71,9 @@
     justify-content: center;
 }
 .deck {
+    margin-top:150px;
     margin-bottom: 75px;
+    z-index: 0;
     overflow-y: scroll;
 }
 
